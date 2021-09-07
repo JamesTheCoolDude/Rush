@@ -25,7 +25,7 @@ var goners = 0;
 var time = 500;
 var jumps;
 var jumps2;
-var times = [1500, 100, 500, 250]
+var times = [5000, 1500, 100, 500, 250]
 function getaverage (nums) {
   var totalSum = 0;
   for(var i in nums) {
