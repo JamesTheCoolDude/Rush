@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rush</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+				box-sizing : border-box;
 
+				margin :  0;
+				padding : 0;
+
+				overflow : hidden;
+			}
+
+			#fps {
+				position : fixed;
+
+				top :  0;
+				left : 0;
+
+				height : 50px;
+
+				padding-top : 10px;
+				padding-left : 20px;
+
+				color : white;
+
+				font-size : 25px;
+				font-family : comic sans ms;
+			}
+			
+			canvas {
+			    top : 0px;
+			    position : fixed;
+          left:0px;
+          background:blue;
+			}
+			
+			#under {
+			    top : 100px;
+			    z-index: 100;
+			    font-size : 50px;
+          color:black;
+          position:absolute;
+          left:25%;
+          font-family: 'Odibee Sans', cursive;
+			}
+			body {
+			    overflow:hidden;
+			    cursor:crosshair;
+			}
+      #settings {
+        z-index:1000000000000000;
+        left:43%;
+        display:block;
+        position:absolute;
+        background:black;
+        padding:20px;
+        top:35%;
+      }
+      #gamemode {
+        margin:auto;
+        display:grid;
+        margin-top: 10px;
+        padding:5px 10px;
+        outline:none;
+      }
+      #sensitivity {
+        margin:auto;
+        display:grid;
+        margin-top: 10px;
+        padding:5px 10px;
+        outline:none;
+        background: transparent;
+        border:none;
+        border-bottom:solid 1px white;
+        color:white;
+      }
+      #yeetes {
+        margin:auto;
+        display:grid;
+        margin-top: 10px;
+        padding:5px 10px;
+        outline:none;
+        background: transparent;
+        border:none;
+        border-bottom:solid 1px white;
+        color:white;
+      }
+      #yeetes:focus, #sensitivity:focus {
+        padding:5px 15px;
+      }
+      #yeetes, #sensitivity {
+        transition:all 1s ease;
+      }
+      #submit {
+        margin:auto;
+        display:grid;
+        margin-top: 10px;
+        padding:5px 10px;
+        cursor: pointer;
+        outline:none;
+      }
+    </style>
+  </head>
+
+	<body id = "body">
+	    <div id = "under">Please choose the settings you want to use!</div>
+		<canvas id = "canvas">
+			Please reload the page!
+		</canvas>
+    <div id="settings">
+      <select name="" id="gamemode">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+        <option>Insane</option>
+      </select>
+      <input type="number" id="sensitivity" placeholder="Sensitivity" max="100" min="0">
+      <input type="number" id="yeetes" placeholder="Yeetes amount" value="3" max="10" min="0">
+      <button id="submit" onclick="play();">Play</button>
+    </div>
+		<!--STANDARD LIBRARY-->
+
+		<!--Canvas Fixing-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Standard_v1.0/canvas.js"></script>
+
+		<!--User Input-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Standard_v1.0/input.js"></script>
+
+		<!--2D Graphics Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Standard_v1.0/graphics.js"></script>
+
+		<!--Sound Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Standard_v1.0/audio.js"></script>
+
+		<!--Time Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Standard_v1.0/time.js"></script>
+
+		<!--ENGINE3D LIBRARY-->
+
+		<!--Vector Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Engine3D_v1.0/vector.js"></script>
+
+		<!--Matrix Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Engine3D_v1.0/matrix.js"></script>
+
+		<!--Primitive Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Engine3D_v1.0/primitive.js"></script>
+
+		<!--MAIN LIBRARIES-->
+
+		<!--3D Camera-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Engine3D_v1.0/camera.js"></script>
+
+		<!--3D Engine-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/Engine3D_v1.0/main.js"></script>
+
+		<!--MECH Engine-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/EngineMECH_v1.0/main.js"></script>
+
+		<!--Object3D Library-->
+		<script src = "https://cdn.jsdelivr.net/gh/ArrowheadCo/EngineMECH_v1.0/object.js"></script>
+
+		<!--Game Engine-->
+		<script src="rush.js"></script>
+	</body>
+</html>
